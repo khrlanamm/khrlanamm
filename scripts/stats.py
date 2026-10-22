@@ -205,13 +205,14 @@ def activity_card(theme_name: str, days: dict[str, int], recent: int) -> str:
         f'<line x1="{x0}" y1="{y1 + 0.5}" x2="{x1}" y2="{y1 + 0.5}" stroke="{theme["border"]}"/>'
         f'<path class="fade" d="{area}" fill="url(#a)" style="animation-delay:.6s"/>'
         f'<path class="draw" d="{line}" fill="none" stroke="url(#g)" stroke-width="2.2" stroke-linecap="round" '
-        f'stroke-dasharray="{length:.0f}" stroke-dashoffset="{length:.0f}"/>'
+        f'stroke-dasharray="{length:.0f}" stroke-dashoffset="0"/>'
         + cols
     )
     css = (
-        f".draw{{animation:draw 2s ease-out .2s forwards}}"
-        "@keyframes draw{to{stroke-dashoffset:0}}"
-        "@media (prefers-reduced-motion:reduce){.draw{stroke-dashoffset:0}}"
+        # The line is drawn by default and only hidden while the animation runs,
+        # so renderers without CSS animation still show it.
+        f".draw{{animation:draw 2s ease-out .2s both}}"
+        f"@keyframes draw{{from{{stroke-dashoffset:{length:.0f}}}to{{stroke-dashoffset:0}}}}"
     )
     text = big + "contributions in the last year" + "".join(v + k for v, k in stats) + "0123456789,"
     updated = date.today().strftime("%-d %b %Y")

@@ -65,12 +65,17 @@ def typing(theme: dict) -> str:
     cursor_events: list[tuple[float, float]] = []
     for i, (phrase, events) in enumerate(zip(PHRASES, timelines)):
         widths = [(t, n * cw) for t, n in events]
+        # Renderers without SMIL (the GitHub mobile app) ignore the clip and the
+        # animation, so the static state shows the first phrase only.
+        shown = [(0.0, 0), (events[1][0], 1), (events[-1][0], 0)]
         parts.append(
             f'<clipPath id="type{i}"><rect x="{start:.1f}" y="{TYPE_Y - 16}" height="22" width="{len(phrase) * cw if i == 0 else 0:.1f}">'
             + discrete("width", total, widths)
             + "</rect></clipPath>"
             f'<text x="{start:.1f}" y="{TYPE_Y}" class="mono" fill="{theme["fg"]}" '
-            f'fill-opacity="0.85" clip-path="url(#type{i})">{esc(phrase)}</text>'
+            f'fill-opacity="0.85" opacity="{1 if i == 0 else 0}" clip-path="url(#type{i})">{esc(phrase)}'
+            + discrete("opacity", total, shown)
+            + "</text>"
         )
         cursor_events += [(t, start + w + 2) for t, w in widths[1:]]
     cursor_events = [(0.0, start + 2)] + sorted(cursor_events)
@@ -250,7 +255,8 @@ def build(theme_name: str) -> str:
 {chips(theme_name, theme)}
 <g class="fade">
 <text x="{X0}" y="92" class="sans" font-size="20" font-weight="500" fill="{theme["primary"]}">{esc(HELLO)}</text>
-<text x="{X0}" y="158" class="sans" font-size="60" font-weight="700" fill="{theme["fg"]}">{FIRST} <tspan fill="url(#name)">{LAST}</tspan></text>
+<text x="{X0}" y="158" class="sans" font-size="60" font-weight="700" fill="{theme["fg"]}">{FIRST}</text>
+<text x="{X0 + first_w:.1f}" y="158" class="sans" font-size="60" font-weight="700" fill="url(#name)">{LAST}</text>
 <text x="{X0}" y="202" class="sans" font-size="24" font-weight="500" fill="{theme["fg"]}" fill-opacity="0.9">{esc(ROLE)}</text>
 </g>
 {typing(theme)}
