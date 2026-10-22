@@ -16,12 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: gautamkrishnar/blog-post-workflow@v1
+      - uses: actions/setup-python@v6
         with:
-          feed_list: "https://medium.com/feed/@khoirulanam1604"
-          max_post_count: 3
-          template: "- [$title]($url) <sub>$date</sub>$newline"
-          date_format: "mmm yyyy"
-          commit_message: "Update latest Medium posts"
-          committer_username: "github-actions[bot]"
-          committer_email: "41898282+github-actions[bot]@users.noreply.github.com"
+          python-version: "3.13"
+
+      - run: python scripts/blog.py
+
+      - name: Commit when the list changed
+        run: |
+          git diff --quiet README.md && exit 0
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Update latest Medium posts" README.md
+          git push -q

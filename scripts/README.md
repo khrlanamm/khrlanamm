@@ -8,6 +8,7 @@ Generators for the SVGs in the profile README. Colors follow the theme tokens of
 | `stack.py` | `assets/stack-*.svg` | By hand, after changing the stack |
 | `badges.py` | `assets/badges/*.svg` | By hand, after changing a link |
 | `stats.py` | `activity-*.svg`, `languages-*.svg` on the `output` branch | Daily, by `.github/workflows/stats.yml` |
+| `blog.py` | Medium list in `README.md` | Weekly, by `.github/workflows/blog.yml` |
 
 ```sh
 pip install fonttools brotli
