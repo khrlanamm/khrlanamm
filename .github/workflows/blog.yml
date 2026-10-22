@@ -1,0 +1,27 @@
+name: Latest Medium posts
+
+# Fills the list between the BLOG-POST-LIST markers in README.md.
+
+on:
+  schedule:
+    - cron: "40 23 * * 0" # Monday 06:40 WIB
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "https://medium.com/feed/@khoirulanam1604"
+          max_post_count: 3
+          template: "- [$title]($url) <sub>$date</sub>$newline"
+          date_format: "mmm yyyy"
+          commit_message: "Update latest Medium posts"
+          committer_username: "github-actions[bot]"
+          committer_email: "41898282+github-actions[bot]@users.noreply.github.com"

@@ -1,0 +1,8 @@
+<!-- Drawn for this repo: rounded square with the letters "in", Lucide stroke style -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="2" width="20" height="20" rx="4" />
+  <path d="M8 11v6" />
+  <path d="M8 7.5v.01" />
+  <path d="M12 17v-6" />
+  <path d="M12 13.5a2.5 2.5 0 0 1 5 0V17" />
+</svg>

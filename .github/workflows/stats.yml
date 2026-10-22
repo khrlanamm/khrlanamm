@@ -1,0 +1,62 @@
+name: Profile cards
+
+# Rebuilds the activity, language, and snake SVGs and publishes them to the
+# `output` branch, which README.md links to. The branch holds one generated
+# commit and is replaced on every run.
+
+on:
+  schedule:
+    - cron: "17 23 * * *" # 06:17 WIB
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["scripts/**", ".github/workflows/stats.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Jakarta
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - run: pip install fonttools brotli
+
+      # STATS_TOKEN is a fine-grained token with read-only metadata access to all
+      # repositories, so private repositories count toward the language mix.
+      # Without it the cards fall back to public data.
+      - name: Activity and language cards
+        working-directory: scripts
+        env:
+          STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python stats.py ../dist
+
+      - name: Contribution snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake-light.svg?color_snake=#7C3AED&color_dots=#EBEDF0,#DDD6FE,#C4B5FD,#A78BFA,#7C3AED
+            dist/snake-dark.svg?palette=github-dark&color_snake=#F472B6&color_dots=#161B22,#2E1065,#5B21B6,#7C3AED,#A78BFA
+
+      - name: Publish to the output branch
+        working-directory: dist
+        run: |
+          git init -q -b output
+          git add .
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "Update profile cards"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" output
