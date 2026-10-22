@@ -2,6 +2,7 @@
 
 Run: STATS_TOKEN=... python scripts/stats.py [out_dir]  (needs fonttools and brotli)
 Output: activity-<theme>.svg and languages-<theme>.svg in out_dir (default dist/).
+The language card needs STATS_TOKEN and is skipped without it.
 
 The cards show totals only. Private repositories count toward the numbers and
 the language mix, but their names never appear in the output.
@@ -267,9 +268,15 @@ def languages_card(theme_name: str, langs: list[tuple[str, int, str]]) -> str:
 def main() -> None:
     out = Path(sys.argv[1] if len(sys.argv) > 1 else "dist")
     days, recent = fetch_days()
-    langs = fetch_languages()
     for name in THEMES:
         write(out / f"activity-{name}.svg", activity_card(name, days, recent))
+    # Private repositories are only visible with STATS_TOKEN. Without it the
+    # workflow keeps the last language card instead of a public-only one.
+    if not os.environ.get("STATS_TOKEN"):
+        print("STATS_TOKEN not set, skipping the language card")
+        return
+    langs = fetch_languages()
+    for name in THEMES:
         write(out / f"languages-{name}.svg", languages_card(name, langs))
 
 

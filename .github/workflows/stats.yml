@@ -9,7 +9,7 @@ on:
     - cron: "17 23 * * *" # 06:17 WIB
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, redesign]
     paths: ["scripts/**", ".github/workflows/stats.yml"]
 
 permissions:
@@ -33,15 +33,21 @@ jobs:
 
       - run: pip install fonttools brotli
 
-      # STATS_TOKEN is a fine-grained token with read-only metadata access to all
-      # repositories, so private repositories count toward the language mix.
-      # Without it the cards fall back to public data.
+      # STATS_TOKEN is an optional fine-grained token with read-only metadata
+      # access to all repositories, so private repositories count toward the
+      # language mix. Without it the language card from the last run is kept.
       - name: Activity and language cards
         working-directory: scripts
         env:
           STATS_TOKEN: ${{ secrets.STATS_TOKEN }}
           GITHUB_TOKEN: ${{ github.token }}
         run: python stats.py ../dist
+
+      - name: Keep the last language card when STATS_TOKEN is not set
+        if: hashFiles('dist/languages-dark.svg') == ''
+        run: |
+          git fetch -q --depth=1 origin output
+          git --work-tree=dist checkout FETCH_HEAD -- languages-dark.svg languages-light.svg
 
       - name: Contribution snake
         uses: Platane/snk@v3
