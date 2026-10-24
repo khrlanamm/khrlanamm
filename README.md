@@ -55,7 +55,7 @@ I build mobile apps for Android and iOS with Flutter and Kotlin, plus web fronte
       <h3>GamaWaste</h3>
       <p>Thesis app that sorts waste into the three UGM bin categories with Gemini through Cloud Functions. The mode (zero-shot, few-shot, or selective re-inference) is set from Firestore without a new build. Selective few-shot reached 94.4% accuracy, against 77.8% for MobileNetV2.</p>
       <p><code>Flutter</code> <code>Cloud Functions</code> <code>Firestore</code> <code>Gemini</code></p>
-      <p><a href="https://etd.repository.ugm.ac.id/penelitian/detail/286836">Thesis at ETD UGM</a></p>
+      <p><a href="https://etd.repository.ugm.ac.id/penelitian/detail/286836">Thesis at ETD UGM</a> | <a href="https://github.com/khrlanamm/gamaresik">Repository</a></p>
     </td>
     <td width="50%" valign="top">
       <a href="https://play.google.com/store/apps/details?id=com.kuartet.mbois"><img src="assets/projects/mbois.webp" alt="M-BOIS feature graphic" width="100%"></a>
@@ -78,7 +78,7 @@ I build mobile apps for Android and iOS with Flutter and Kotlin, plus web fronte
       <h3>Mandu (Teman Ngadu)</h3>
       <p>Bullying report app for SMA Negeri 1 Sukodadi, published by Komunitas Kertas Kosong. Students report incidents and send aspirations, and the school follows up from a dashboard. Rewritten from Kotlin to Flutter for version 4.</p>
       <p><code>Flutter</code> <code>Kotlin</code> <code>Firebase</code></p>
-      <p><a href="https://play.google.com/store/apps/details?id=com.khrlanamm.mandu">Google Play</a></p>
+      <p><a href="https://play.google.com/store/apps/details?id=com.khrlanamm.mandu">Google Play</a> | <a href="https://github.com/khrlanamm/mandu">Repository</a></p>
     </td>
   </tr>
 </table>
@@ -90,11 +90,11 @@ I build mobile apps for Android and iOS with Flutter and Kotlin, plus web fronte
 <table>
   <tr>
     <td width="34%"><a href="https://play.google.com/store/apps/details?id=com.khrlanamm.jelajahsungaipulai"><img src="assets/projects/jelajah-sungai-pulai.webp" alt="Jelajah Sungai Pulai feature graphic" width="100%"></a></td>
-    <td valign="top"><b>Jelajah Sungai Pulai</b><br>Village profile app for Nagari Sungai Pulai, West Sumatra. Built during KKN-PPM UGM 2025, tested by 20 residents over 14 days, and handed over to the village.<br><code>Kotlin</code> <code>Firebase</code><br><a href="https://play.google.com/store/apps/details?id=com.khrlanamm.jelajahsungaipulai">Google Play</a></td>
+    <td valign="top"><b>Jelajah Sungai Pulai</b><br>Village profile app for Nagari Sungai Pulai, West Sumatra. Built during KKN-PPM UGM 2025, tested by 20 residents over 14 days, and handed over to the village.<br><code>Kotlin</code> <code>Firebase</code><br><a href="https://play.google.com/store/apps/details?id=com.khrlanamm.jelajahsungaipulai">Google Play</a> | <a href="https://github.com/khrlanamm/JelajahSungaiPulai">Repository</a></td>
   </tr>
   <tr>
     <td width="34%"><img src="assets/projects/si-tirta.webp" alt="SI-TIRTA feature graphic" width="100%"></td>
-    <td valign="top"><b>SI-TIRTA</b><br>Water billing and bookkeeping app for a village water utility in West Sumatra. Used for the June 2025 payments and taught to 10 utility officers.<br><code>Kotlin</code> <code>Firebase</code></td>
+    <td valign="top"><b>SI-TIRTA</b><br>Water billing and bookkeeping app for a village water utility in West Sumatra. Used for the June 2025 payments and taught to 10 utility officers.<br><code>Kotlin</code> <code>Firebase</code><br><a href="https://github.com/khrlanamm/SI-TIRTA">Repository</a></td>
   </tr>
   <tr>
     <td width="34%"><a href="https://github.com/ReihanZakya/KaizenSpeaking"><img src="assets/projects/kaizen-speaking.webp" alt="Kaizen Speaking feature graphic" width="100%"></a></td>
@@ -109,12 +109,12 @@ I build mobile apps for Android and iOS with Flutter and Kotlin, plus web fronte
     <td valign="top"><b>Gigi Kecil</b><br>Dental health education app for children with AI caries detection (93% accuracy) and AR lessons. Funded by PKM-PI 2023, with a registered copyright.<br><code>Flutter</code> <code>React</code> <code>Firebase</code><br><a href="https://gigi-kecil-6d9e6.web.app">Website</a></td>
   </tr>
   <tr>
-    <td width="34%"><img src="assets/projects/sabu-saku.webp" alt="Sabu Saku feature graphic" width="100%"></td>
-    <td valign="top"><b>Sabu Saku</b><br>Reading journal for high school students built around one book a month, with a catalog of more than 1,000 books and teacher comments.<br><code>Flutter</code> <code>Firebase</code></td>
+    <td width="34%"><a href="https://play.google.com/store/apps/details?id=com.sabu.saku"><img src="assets/projects/sabu-saku.webp" alt="Sabu Saku feature graphic" width="100%"></a></td>
+    <td valign="top"><b>Sabu Saku</b><br>Reading journal for high school students built around one book a month, with a catalog of more than 1,000 books and teacher comments.<br><code>Flutter</code> <code>Firebase</code><br><a href="https://play.google.com/store/apps/details?id=com.sabu.saku">Google Play</a> | <a href="https://github.com/khrlanamm/sabusaku">Repository</a></td>
   </tr>
   <tr>
-    <td width="34%"><img src="assets/projects/warmad.webp" alt="Warmad feature graphic" width="100%"></td>
-    <td valign="top"><b>Warmad</b><br>Point of sale app for small Madurese neighborhood shops: cashier, stock, customer credit, and daily cash closing, all working offline.<br><code>Flutter</code> <code>Firebase</code></td>
+    <td width="34%"><a href="https://play.google.com/store/apps/details?id=com.benevology.warmad"><img src="assets/projects/warmad.webp" alt="Warmad feature graphic" width="100%"></a></td>
+    <td valign="top"><b>Warmad</b><br>Point of sale app for small Madurese neighborhood shops: cashier, stock, customer credit, and daily cash closing, all working offline.<br><code>Flutter</code> <code>Firebase</code><br><a href="https://play.google.com/store/apps/details?id=com.benevology.warmad">Google Play</a> | <a href="https://github.com/khrlanamm/warmad">Repository</a></td>
   </tr>
 </table>
 
@@ -138,6 +138,10 @@ I build mobile apps for Android and iOS with Flutter and Kotlin, plus web fronte
 - Registered copyright for the Gigi Kecil app, 2024
 - Student Creativity Program grants, PKM-PI 2023 and PKM-K 2024
 - Inovokasia Award 2024 for Kuartet Lestari, Vocational College, UGM
+
+**Open source**
+
+- [SuperTux](https://github.com/SuperTux/supertux), the 2D platformer: [allow binding the console key to other controls](https://github.com/SuperTux/supertux/pull/3910), merged October 2026
 
 ## GitHub activity
 
