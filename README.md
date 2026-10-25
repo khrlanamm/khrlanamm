@@ -21,7 +21,6 @@ I build mobile apps for Android and iOS with Flutter and Kotlin, plus web fronte
 - **Now:** Software Developer in the Digitalization Unit of the IT Department at PT Petrokimia Gresik. I continue AgrooFertile, develop DILOC for mobile and web, and work on the web frontend of Digilabs, the company's laboratory service platform.
 - **Shipped:** 5 apps on Google Play and 2 on the App Store, and I handle their releases.
 - **Studied:** Computer Science at Universitas Gadjah Mada, graduated October 2026 with a GPA of 3.98 (Cum Laude). My thesis compared MobileNetV2 with a generative AI model using selective few-shot learning for waste classification.
-- **Open to:** full-time roles in mobile development for Android and iOS, and in software and frontend engineering.
 
 ## Tech stack
 
