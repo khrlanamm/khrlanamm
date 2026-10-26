@@ -165,7 +165,7 @@ I build mobile apps for Android and iOS with Flutter and Kotlin, plus web fronte
 ## Writing
 
 <!-- BLOG-POST-LIST:START -->
+- [From a Campus Trash Bin to a Bachelor’s Degree](https://medium.com/@khoirulanam1604/from-a-campus-trash-bin-to-a-bachelors-degree-d77dc0e96413) <sub>Oct 2026</sub>
 - [Kaizen Speaking: Empowering Confident Communication Through Technology](https://medium.com/@khoirulanam1604/kaizen-speaking-empowering-confident-communication-through-technology-9bac50ceb79c) <sub>Jan 2025</sub>
 - [Building Dreams, One App at a Time: My Development Journey at Bangkit Academy 2024](https://medium.com/@khoirulanam1604/building-dreams-one-app-at-a-time-my-development-journey-at-bangkit-academy-2024-f0dbd51a2734) <sub>Jan 2025</sub>
-- [A Journey to Rediscovering Passion: Lessons from Bangkit Academy 2024](https://medium.com/@khoirulanam1604/a-journey-to-rediscovering-passion-lessons-from-bangkit-academy-2024-fa3264da7483) <sub>Jan 2025</sub>
 <!-- BLOG-POST-LIST:END -->
