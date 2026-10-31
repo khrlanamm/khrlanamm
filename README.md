@@ -140,6 +140,7 @@ I build mobile apps for Android and iOS with Flutter and Kotlin, plus web fronte
 
 **Open source**
 
+- [Buku Indonesia](https://github.com/khrlanamm/buku-indonesia), open data for Indonesian books: a static JSON API with CSV, JSON, and SQLite downloads
 - [SuperTux](https://github.com/SuperTux/supertux), the 2D platformer: [allow binding the console key to other controls](https://github.com/SuperTux/supertux/pull/3910), merged October 2026
 
 ## GitHub activity
